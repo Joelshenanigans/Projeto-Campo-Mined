@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campo Minado - Terminal Edition</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="crt-overlay"></div>
+  
+  <div class="terminal-container">
+    <!-- Window Titlebar -->
+    <div class="terminal-header">
+      <div class="window-buttons">
+        <span class="btn close"></span>
+        <span class="btn minimize"></span>
+        <span class="btn maximize"></span>
+      </div>
+      <div class="window-title">root@minesweeper:~# ./start_game.sh</div>
+      <div class="window-actions">
+        <button id="sound-toggle" title="Alternar som">🔊</button>
+      </div>
+    </div>
+
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <div class="stat-box">
+        <span class="stat-label">MINAS</span>
+        <span id="mine-count" class="stat-value">015</span>
+      </div>
+      <div class="stat-box">
+        <button id="reset-btn" class="reset-button" title="Reiniciar jogo">
+          <span class="face-icon">🙂</span>
+          <span class="btn-text">NOVO JOGO</span>
+        </button>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">TEMPO</span>
+        <span id="timer" class="stat-value">000</span>
+      </div>
+    </div>
+
+    <!-- Terminal Message Banner -->
+    <div id="game-message" class="game-message status-normal">
+      > SISTEMA PRONTO. SELECIONE UMA CÉLULA PARA INICIAR.
+    </div>
+
+    <!-- Minesweeper Grid Board -->
+    <div id="board" class="board"></div>
+
+    <!-- Footer Controls & Hints -->
+    <div class="terminal-footer">
+      <div class="controls-hint">
+        <span><kbd>Clique Esq.</kbd> Revelar</span>
+        <span><kbd>Clique Dir.</kbd> Bandeira</span>
+        <span><kbd>Espaço / R</kbd> Reiniciar</span>
+      </div>
+      <div class="logs" id="terminal-logs">
+        <p class="log-line">> Campo minado 10x10 carregado com 15 minas.</p>
+        <p class="log-line">> Proteção do primeiro clique: ATIVADA.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
